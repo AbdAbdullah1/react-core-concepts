@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   var names = ["Abd", "Anamul", "Mahafuz", "Bappi", "Shuvo"]
   const products =[{name:'Photoshpop', price: '$90.99'},
 {name:'Illustrator', price:'$60.99'},
 {name:'PDF Reader', price:"$6.99"},
-{name:'premier', price:"$4000"}]
+{name:'premier', price:"$40300"}]
 const persoNames = names.map(name => name);
 console.log(names);
   return (
     <div className="App">
       <header className="App-header">
+        <Counter></Counter>
         <ul>
           {
             names.map(name => <li>{name} </li>)
           }
           
           {
-            products.map(product => <li>{product.name}</li>)
+            products.map(pd => <li>{pd.name}</li>)
           }
         </ul>
         {
@@ -34,6 +36,17 @@ console.log(names);
     </div>
   );
 }
+
+function  Counter() {
+  const [count, setCount] = useState(10);
+  return(
+    <div>
+      <h1>Count: {count} </h1>
+      <button>Increase</button>
+    </div> 
+  )
+}
+
 function Product(props) {
   const productStyle ={
     border:'1px solid gray',
