@@ -6,6 +6,8 @@ function App() {
   const products =[{name:'Photoshpop', price: '$90.99'},
 {name:'Illustrator', price:'$60.99'},
 {name:'PDF Reader', price:"$6.99"}]
+const persoNames = names.map(name => name);
+console.log(names);
   return (
     <div className="App">
       <header className="App-header">
