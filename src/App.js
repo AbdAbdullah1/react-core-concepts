@@ -2,17 +2,30 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  var names = ["Abd", "Emrul", "Anamul", "Mahafuz"]
+  var names = ["Abd", "Anamul", "Mahafuz", "Bappi", "Shuvo"]
   const products =[{name:'Photoshpop', price: '$90.99'},
 {name:'Illustrator', price:'$60.99'},
-{name:'PDF Reader', price:"$6.99"}]
+{name:'PDF Reader', price:"$6.99"},
+{name:'premier', price:"$4000"}]
 const persoNames = names.map(name => name);
 console.log(names);
   return (
     <div className="App">
       <header className="App-header">
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
+        <ul>
+          {
+            names.map(name => <li>{name} </li>)
+          }
+          
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+        </ul>
+        {
+          products.map(product => <Product product={product}></Product>)
+        }
+        {/* <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product> */}
     <Person name={names[0]} job='Web Development'></Person>
     <Person name={names[1]} job="rajmistri"></Person>
     <Person name={names[2]} job='Square Company'></Person>
