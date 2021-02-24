@@ -56,13 +56,15 @@ function Users() {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then(res =>res.json())
     .then(data => setUsers(data))
-  })
+  },[])
   return(
     <div>
       <h3>Dynamic Users: {users.length}</h3>
-      {
-        console.log("users")
-      }
+      <ul>
+        {
+          users.map(user => <li>{user.email}</li>)
+        }
+      </ul>
     </div>
   )
 }
